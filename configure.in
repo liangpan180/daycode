@@ -1,0 +1,25 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.63)
+AC_INIT([daycode], [1.0], [liangpan180@163.com])
+#AC_CONFIG_SRCDIR([config.h.in])
+#AC_CONFIG_HEADER([config.h])
+AM_INIT_AUTOMAKE([daycode], [1.0])
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+#AC_CHECK_LIB([pthread])
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_OUTPUT([Makefile
+		src/Makefile
+		test/Makefile
+		])

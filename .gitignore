@@ -1,0 +1,15 @@
+aclocal.m4
+autom4te.cache
+ChangeLog
+COPYING
+INSTALL
+Makefile*
+missing
+autoscan.log
+install-sh
+configure
+depcomp
+compile
+config.log
+config.status
+.deps
