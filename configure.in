@@ -9,6 +9,7 @@ AM_INIT_AUTOMAKE([daycode], [1.0])
 
 # Checks for programs.
 AC_PROG_CC
+AM_PROG_LIBTOOL
 
 # Checks for libraries.
 #AC_CHECK_LIB([pthread])
@@ -22,4 +23,5 @@ AC_PROG_CC
 AC_OUTPUT([Makefile
 		src/Makefile
 		test/Makefile
+		common/Makefile
 		])

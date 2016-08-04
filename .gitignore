@@ -12,4 +12,13 @@ depcomp
 compile
 config.log
 config.status
+config.guess
+config.sub
+daycode
 .deps
+*.o
+*.lo
+.libs
+*.la
+libtool
+ltmain.sh
