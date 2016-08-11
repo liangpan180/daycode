@@ -8,3 +8,5 @@ struct dayfunc {
 
 /* functions */
 void AlbToChinese(void);
+
+void BucketWater(void);

@@ -10,6 +10,7 @@
 
 struct dayfunc funcmap[] = {
 	{"AlbToChinese", AlbToChinese},
+	{"BucketWater", BucketWater},
 	{NULL, NULL},
 };
 
@@ -42,7 +43,7 @@ int main(int argc, char** argv)
 	int opt = 0;
 	int i = 0;
 	int count = 0;
-	int number = 0;
+	int number = -1;
 	char* const optstring = "n:lh";
 
 	static struct option long_options[] = {
@@ -68,7 +69,7 @@ int main(int argc, char** argv)
 	}
 
 	count = sizeof(funcmap)/sizeof(funcmap[0]) - 1;
-	if (number > 0 && number < count) {
+	if (number >= 0 && number < count) {
 		printf("[%s]\n", funcmap[number].func_name);
 		funcmap[number].func();
 	} else {
