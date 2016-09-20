@@ -15,8 +15,10 @@ AM_PROG_LIBTOOL
 #AC_CHECK_LIB([pthread])
 
 # Checks for header files.
+AC_CHECK_HEADER([stdlib.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_UINT32_T
 
 # Checks for library functions.
 
