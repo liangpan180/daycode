@@ -48,7 +48,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_daycode_OBJECTS = daycode.$(OBJEXT) AlbToChinese.$(OBJEXT)
+am_daycode_OBJECTS = daycode.$(OBJEXT) AlbToChinese.$(OBJEXT) \
+	BucketWater.$(OBJEXT)
 daycode_OBJECTS = $(am_daycode_OBJECTS)
 daycode_DEPENDENCIES =
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -181,10 +182,11 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 daycode_LDADD = $(LIBCOMMON) 
-daycode_SOURCES = daycode.c \
-		  AlbToChinese.c
+daycode_SOURCES = src/daycode.c \
+		  src/AlbToChinese.c \
+		  src/BucketWater.c
 
-noinst_HEADERS = daycode.h
+noinst_HEADERS = src/daycode.h
 all: all-am
 
 .SUFFIXES:
@@ -273,6 +275,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/AlbToChinese.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BucketWater.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/daycode.Po@am__quote@
 
 .c.o:
@@ -295,6 +298,48 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+
+daycode.o: src/daycode.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT daycode.o -MD -MP -MF $(DEPDIR)/daycode.Tpo -c -o daycode.o `test -f 'src/daycode.c' || echo '$(srcdir)/'`src/daycode.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/daycode.Tpo $(DEPDIR)/daycode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/daycode.c' object='daycode.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o daycode.o `test -f 'src/daycode.c' || echo '$(srcdir)/'`src/daycode.c
+
+daycode.obj: src/daycode.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT daycode.obj -MD -MP -MF $(DEPDIR)/daycode.Tpo -c -o daycode.obj `if test -f 'src/daycode.c'; then $(CYGPATH_W) 'src/daycode.c'; else $(CYGPATH_W) '$(srcdir)/src/daycode.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/daycode.Tpo $(DEPDIR)/daycode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/daycode.c' object='daycode.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o daycode.obj `if test -f 'src/daycode.c'; then $(CYGPATH_W) 'src/daycode.c'; else $(CYGPATH_W) '$(srcdir)/src/daycode.c'; fi`
+
+AlbToChinese.o: src/AlbToChinese.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT AlbToChinese.o -MD -MP -MF $(DEPDIR)/AlbToChinese.Tpo -c -o AlbToChinese.o `test -f 'src/AlbToChinese.c' || echo '$(srcdir)/'`src/AlbToChinese.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/AlbToChinese.Tpo $(DEPDIR)/AlbToChinese.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/AlbToChinese.c' object='AlbToChinese.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o AlbToChinese.o `test -f 'src/AlbToChinese.c' || echo '$(srcdir)/'`src/AlbToChinese.c
+
+AlbToChinese.obj: src/AlbToChinese.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT AlbToChinese.obj -MD -MP -MF $(DEPDIR)/AlbToChinese.Tpo -c -o AlbToChinese.obj `if test -f 'src/AlbToChinese.c'; then $(CYGPATH_W) 'src/AlbToChinese.c'; else $(CYGPATH_W) '$(srcdir)/src/AlbToChinese.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/AlbToChinese.Tpo $(DEPDIR)/AlbToChinese.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/AlbToChinese.c' object='AlbToChinese.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o AlbToChinese.obj `if test -f 'src/AlbToChinese.c'; then $(CYGPATH_W) 'src/AlbToChinese.c'; else $(CYGPATH_W) '$(srcdir)/src/AlbToChinese.c'; fi`
+
+BucketWater.o: src/BucketWater.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT BucketWater.o -MD -MP -MF $(DEPDIR)/BucketWater.Tpo -c -o BucketWater.o `test -f 'src/BucketWater.c' || echo '$(srcdir)/'`src/BucketWater.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/BucketWater.Tpo $(DEPDIR)/BucketWater.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/BucketWater.c' object='BucketWater.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o BucketWater.o `test -f 'src/BucketWater.c' || echo '$(srcdir)/'`src/BucketWater.c
+
+BucketWater.obj: src/BucketWater.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT BucketWater.obj -MD -MP -MF $(DEPDIR)/BucketWater.Tpo -c -o BucketWater.obj `if test -f 'src/BucketWater.c'; then $(CYGPATH_W) 'src/BucketWater.c'; else $(CYGPATH_W) '$(srcdir)/src/BucketWater.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/BucketWater.Tpo $(DEPDIR)/BucketWater.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/BucketWater.c' object='BucketWater.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o BucketWater.obj `if test -f 'src/BucketWater.c'; then $(CYGPATH_W) 'src/BucketWater.c'; else $(CYGPATH_W) '$(srcdir)/src/BucketWater.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -418,8 +463,7 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
-clean-am: clean-binPROGRAMS clean-generic clean-libtool clean-local \
-	mostlyclean-am
+clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-am
 	-rm -rf ./$(DEPDIR)
@@ -490,22 +534,22 @@ uninstall-am: uninstall-binPROGRAMS
 .MAKE: install-am install-strip
 
 .PHONY: CTAGS GTAGS all all-am check check-am clean clean-binPROGRAMS \
-	clean-generic clean-libtool clean-local ctags distclean \
-	distclean-compile distclean-generic distclean-libtool \
-	distclean-tags distdir dvi dvi-am html html-am info info-am \
-	install install-am install-binPROGRAMS install-data \
-	install-data-am install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags uninstall uninstall-am uninstall-binPROGRAMS
+	clean-generic clean-libtool ctags distclean distclean-compile \
+	distclean-generic distclean-libtool distclean-tags distdir dvi \
+	dvi-am html html-am info info-am install install-am \
+	install-binPROGRAMS install-data install-data-am install-dvi \
+	install-dvi-am install-exec install-exec-am install-html \
+	install-html-am install-info install-info-am install-man \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
+	pdf pdf-am ps ps-am tags uninstall uninstall-am \
+	uninstall-binPROGRAMS
 
 
-clean-local:
-	rm -rf *.o
+#clean-local:
+#	rm -rf *.o
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
