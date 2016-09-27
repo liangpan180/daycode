@@ -8,9 +8,13 @@
 #define NOREQ_PARAM	0
 #define REQUIRE_PARAM	1
 
+/* global */
+int silence = 1;
+
 struct dayfunc funcmap[] = {
 	{"AlbToChinese", AlbToChinese},
 	{"BucketWater", BucketWater},
+	{"TryRegex", TryRegex},
 	{NULL, NULL},
 };
 
@@ -58,6 +62,7 @@ int main(int argc, char** argv)
 		switch (opt) {
 			case 'n':
 				number = atoi(optarg);
+				silence = 0;
 				break;
 			case 'l':
 				funcmap_dump();
