@@ -14,11 +14,14 @@ config.log
 config.status
 config.guess
 config.sub
-daycode
 .deps
+*.pyc
 *.o
 *.lo
 .libs
 *.la
 libtool
 ltmain.sh
+
+daycode
+tst_load_python
