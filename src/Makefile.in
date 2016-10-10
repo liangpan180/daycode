@@ -49,7 +49,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_daycode_OBJECTS = daycode.$(OBJEXT) AlbToChinese.$(OBJEXT) \
-	BucketWater.$(OBJEXT)
+	BucketWater.$(OBJEXT) TryRegex.$(OBJEXT)
 daycode_OBJECTS = $(am_daycode_OBJECTS)
 daycode_DEPENDENCIES =
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -184,7 +184,8 @@ top_srcdir = @top_srcdir@
 daycode_LDADD = $(LIBCOMMON) 
 daycode_SOURCES = src/daycode.c \
 		  src/AlbToChinese.c \
-		  src/BucketWater.c
+		  src/BucketWater.c \
+		  src/TryRegex.c
 
 noinst_HEADERS = src/daycode.h
 all: all-am
@@ -276,6 +277,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/AlbToChinese.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BucketWater.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TryRegex.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/daycode.Po@am__quote@
 
 .c.o:
@@ -340,6 +342,20 @@ BucketWater.obj: src/BucketWater.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/BucketWater.c' object='BucketWater.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o BucketWater.obj `if test -f 'src/BucketWater.c'; then $(CYGPATH_W) 'src/BucketWater.c'; else $(CYGPATH_W) '$(srcdir)/src/BucketWater.c'; fi`
+
+TryRegex.o: src/TryRegex.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TryRegex.o -MD -MP -MF $(DEPDIR)/TryRegex.Tpo -c -o TryRegex.o `test -f 'src/TryRegex.c' || echo '$(srcdir)/'`src/TryRegex.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/TryRegex.Tpo $(DEPDIR)/TryRegex.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/TryRegex.c' object='TryRegex.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TryRegex.o `test -f 'src/TryRegex.c' || echo '$(srcdir)/'`src/TryRegex.c
+
+TryRegex.obj: src/TryRegex.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TryRegex.obj -MD -MP -MF $(DEPDIR)/TryRegex.Tpo -c -o TryRegex.obj `if test -f 'src/TryRegex.c'; then $(CYGPATH_W) 'src/TryRegex.c'; else $(CYGPATH_W) '$(srcdir)/src/TryRegex.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/TryRegex.Tpo $(DEPDIR)/TryRegex.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/TryRegex.c' object='TryRegex.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TryRegex.obj `if test -f 'src/TryRegex.c'; then $(CYGPATH_W) 'src/TryRegex.c'; else $(CYGPATH_W) '$(srcdir)/src/TryRegex.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -547,9 +563,6 @@ uninstall-am: uninstall-binPROGRAMS
 	pdf pdf-am ps ps-am tags uninstall uninstall-am \
 	uninstall-binPROGRAMS
 
-
-#clean-local:
-#	rm -rf *.o
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -7,6 +7,3 @@ daycode_SOURCES = src/daycode.c \
 
 noinst_HEADERS = src/daycode.h
 bin_PROGRAMS = daycode
-
-#clean-local:
-#	rm -rf *.o
