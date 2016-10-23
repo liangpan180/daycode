@@ -25,3 +25,4 @@ ltmain.sh
 
 daycode
 tst_load_python
+tst_create_thread
